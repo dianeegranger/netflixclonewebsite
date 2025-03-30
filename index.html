@@ -5,28 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Clone</title>
     <style>
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
-
         body {
             background-color: #000;
             color: #fff;
             line-height: 1.4;
         }
-
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        /* Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -35,21 +29,14 @@
             position: relative;
             z-index: 10;
         }
-
         .logo {
             width: 120px;
         }
-
-        .logo img {
-            width: 100%;
-        }
-
         .header-right {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-
         .language-selector {
             background: rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -61,13 +48,6 @@
             gap: 5px;
             cursor: pointer;
         }
-
-        .language-selector svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
-        }
-
         .sign-in-btn {
             background-color: #e50914;
             color: white;
@@ -76,8 +56,6 @@
             text-decoration: none;
             font-weight: 500;
         }
-
-        /* Hero Section */
         .hero {
             position: relative;
             text-align: center;
@@ -85,7 +63,6 @@
             background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
             overflow: hidden;
         }
-
         .hero::before {
             content: "";
             position: absolute;
@@ -93,23 +70,18 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('/placeholder.svg?height=800&width=1200');
-            background-size: cover;
-            opacity: 0.4;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1600/900') center/cover no-repeat;
             z-index: -1;
         }
-
         .hero h1 {
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 16px;
         }
-
         .hero p {
             font-size: 20px;
             margin-bottom: 20px;
         }
-
         .email-form {
             display: flex;
             flex-direction: column;
@@ -118,17 +90,14 @@
             max-width: 600px;
             margin: 20px auto;
         }
-
         .email-form p {
             font-size: 18px;
         }
-
         .form-group {
             display: flex;
             width: 100%;
             max-width: 600px;
         }
-
         .form-control {
             flex: 1;
             padding: 16px;
@@ -138,7 +107,6 @@
             background-color: rgba(22, 22, 22, 0.7);
             color: white;
         }
-
         .get-started-btn {
             background-color: #e50914;
             color: white;
@@ -152,8 +120,6 @@
             align-items: center;
             gap: 8px;
         }
-
-        /* Promo Section */
         .promo {
             background: linear-gradient(to bottom, #000, #1a1a1a);
             padding: 20px 40px;
@@ -164,28 +130,19 @@
             align-items: center;
             justify-content: space-between;
         }
-
         .promo-content {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-
-        .promo-icon {
-            width: 50px;
-            height: 50px;
-        }
-
         .promo-text h3 {
             font-size: 20px;
             margin-bottom: 8px;
         }
-
         .promo-text p {
             font-size: 16px;
             color: #ccc;
         }
-
         .learn-more-btn {
             background-color: transparent;
             color: white;
@@ -194,34 +151,29 @@
             border-radius: 4px;
             text-decoration: none;
         }
-
-        /* Trending Section */
         .trending {
             padding: 40px 20px;
         }
-
         .trending h2 {
             font-size: 24px;
             margin-bottom: 20px;
         }
-
         .trending-grid {
             display: flex;
             gap: 16px;
             overflow-x: auto;
             padding-bottom: 20px;
         }
-
         .trending-item {
             position: relative;
             min-width: 200px;
         }
-
         .trending-item img {
             width: 100%;
             border-radius: 4px;
+            height: 300px;
+            object-fit: cover;
         }
-
         .trending-number {
             position: absolute;
             bottom: 0;
@@ -233,15 +185,12 @@
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-
-        /* Features Section */
         .features {
             padding: 40px 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
-
         .feature-card {
             background-color: #1a1a1a;
             border-radius: 8px;
@@ -250,46 +199,37 @@
             flex-direction: column;
             gap: 16px;
         }
-
         .feature-card h3 {
             font-size: 20px;
             margin-bottom: 8px;
         }
-
         .feature-card p {
             font-size: 16px;
             color: #ccc;
             margin-bottom: 16px;
         }
-
         .feature-icon {
             width: 60px;
             height: 60px;
             margin-top: auto;
             align-self: flex-end;
         }
-
-        /* FAQ Section */
         .faq {
             padding: 40px 20px;
         }
-
         .faq h2 {
             font-size: 24px;
             margin-bottom: 20px;
             text-align: center;
         }
-
         .accordion {
             max-width: 800px;
             margin: 0 auto;
         }
-
         .accordion-item {
             margin-bottom: 8px;
             background-color: #2d2d2d;
         }
-
         .accordion-button {
             width: 100%;
             text-align: left;
@@ -303,16 +243,13 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .accordion-button:after {
             content: "+";
             font-size: 24px;
         }
-
         .accordion-button.active:after {
             content: "×";
         }
-
         .accordion-content {
             background-color: #2d2d2d;
             padding: 0 20px;
@@ -320,87 +257,47 @@
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
-
         .accordion-content.active {
             padding: 20px;
             max-height: 300px;
         }
-
-        /* Footer */
         .footer {
             padding: 40px 20px;
             color: #757575;
         }
-
         .footer-top {
             margin-bottom: 30px;
         }
-
-        .footer-top p {
-            margin-bottom: 16px;
-        }
-
         .footer-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
-
         .footer-column ul {
             list-style: none;
         }
-
         .footer-column li {
             margin-bottom: 16px;
         }
-
         .footer-column a {
             color: #757575;
             text-decoration: none;
             font-size: 14px;
         }
-
         .footer-column a:hover {
             text-decoration: underline;
         }
-
-        .footer-bottom {
-            margin-top: 20px;
-        }
-
-        /* Wave Divider */
         .wave-divider {
             width: 100%;
             height: 50px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23000' d='M0,96L80,106.7C160,117,320,139,480,138.7C640,139,800,117,960,112C1120,107,1280,117,1360,122.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-            background-repeat: no-repeat;
+            background-color: #000;
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .form-group {
-                flex-direction: column;
-                gap: 16px;
-            }
-            
-            .form-control {
-                border-radius: 4px;
-            }
-            
-            .get-started-btn {
-                border-radius: 4px;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
+            .hero h1 { font-size: 32px; }
+            .form-group { flex-direction: column; gap: 16px; }
+            .form-control { border-radius: 4px; }
+            .get-started-btn { border-radius: 4px; width: 100%; justify-content: center; }
+            .features { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -413,15 +310,7 @@
             </svg>
         </div>
         <div class="header-right">
-            <div class="language-selector">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="white">
-                    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm5.7 4.8h-2.4c-.3-1.2-.7-2.3-1.2-3.2 1.5.7 2.7 1.8 3.6 3.2zM8 2c.7 1 1.2 2.2 1.5 3.5H6.5C6.8 4.2 7.3 3 8 2zM2 8c0-.5.1-1 .2-1.5h2.8c-.1.5-.1 1-.1 1.5s0 1 .1 1.5H2.2c-.1-.5-.2-1-.2-1.5zm.3 3.2h2.4c.3 1.2.7 2.3 1.2 3.2-1.5-.7-2.7-1.8-3.6-3.2zm2.4-6.4H2.3c.9-1.4 2.1-2.5 3.6-3.2-.5.9-.9 2-1.2 3.2zM8 14c-.7-1-1.2-2.2-1.5-3.5h3c-.3 1.3-.8 2.5-1.5 3.5zm1.8-5c.1-.5.1-1 .1-1.5s0-1-.1-1.5h3.1c.1.5.2 1 .2 1.5s-.1 1-.2 1.5h-3.1zm.4 5.2c.5-.9.9-2 1.2-3.2h2.4c-.9 1.4-2.1 2.5-3.6 3.2z"/>
-                </svg>
-                English
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="white">
-                    <path d="M8 11L3 6h10l-5 5z"/>
-                </svg>
-            </div>
+            <div class="language-selector">English</div>
             <a href="#" class="sign-in-btn">Sign In</a>
         </div>
     </header>
@@ -435,12 +324,7 @@
                 <p>Ready to watch? Enter your email to create or restart your membership.</p>
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="Email address">
-                    <button class="get-started-btn">
-                        Get Started
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.5 5L15.5 12L8.5 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                    <button class="get-started-btn">Get Started</button>
                 </div>
             </div>
         </div>
@@ -453,12 +337,6 @@
     <section class="container">
         <div class="promo">
             <div class="promo-content">
-                <div class="promo-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H21C22.1046 19 23 18.1046 23 17V7C23 5.89543 22.1046 5 21 5Z" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
                 <div class="promo-text">
                     <h3>The Netflix you love for just $7.99.</h3>
                     <p>Get our most affordable, ad-supported plan.</p>
@@ -473,23 +351,23 @@
         <h2>Trending Now</h2>
         <div class="trending-grid">
             <div class="trending-item">
-                <img src="/placeholder.svg?height=300&width=200" alt="The List">
+                <img src="https://picsum.photos/id/100/200/300" alt="The List">
                 <div class="trending-number">1</div>
             </div>
             <div class="trending-item">
-                <img src="/placeholder.svg?height=300&width=200" alt="Lady in Black">
+                <img src="https://picsum.photos/id/101/200/300" alt="Lady in Black">
                 <div class="trending-number">2</div>
             </div>
             <div class="trending-item">
-                <img src="/placeholder.svg?height=300&width=200" alt="The Thieves">
+                <img src="https://picsum.photos/id/102/200/300" alt="The Thieves">
                 <div class="trending-number">3</div>
             </div>
             <div class="trending-item">
-                <img src="/placeholder.svg?height=300&width=200" alt="Adolescence">
+                <img src="https://picsum.photos/id/103/200/300" alt="Adolescence">
                 <div class="trending-number">4</div>
             </div>
             <div class="trending-item">
-                <img src="/placeholder.svg?height=300&width=200" alt="The Twister">
+                <img src="https://picsum.photos/id/104/200/300" alt="The Twister">
                 <div class="trending-number">5</div>
             </div>
         </div>
@@ -502,22 +380,18 @@
             <div class="feature-card">
                 <h3>Enjoy on your TV</h3>
                 <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
-                <img src="/placeholder.svg?height=60&width=60" alt="TV Icon" class="feature-icon">
             </div>
             <div class="feature-card">
                 <h3>Download your shows to watch offline</h3>
                 <p>Save your favorites easily and always have something to watch.</p>
-                <img src="/placeholder.svg?height=60&width=60" alt="Download Icon" class="feature-icon">
             </div>
             <div class="feature-card">
                 <h3>Watch everywhere</h3>
                 <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
-                <img src="/placeholder.svg?height=60&width=60" alt="Devices Icon" class="feature-icon">
             </div>
             <div class="feature-card">
                 <h3>Create profiles for kids</h3>
                 <p>Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
-                <img src="/placeholder.svg?height=60&width=60" alt="Kids Icon" class="feature-icon">
             </div>
         </div>
     </section>
@@ -569,12 +443,7 @@
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
             <div class="form-group">
                 <input type="email" class="form-control" placeholder="Email address">
-                <button class="get-started-btn">
-                    Get Started
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.5 5L15.5 12L8.5 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+                <button class="get-started-btn">Get Started</button>
             </div>
         </div>
     </section>
@@ -591,9 +460,6 @@
                     <li><a href="#">Media Center</a></li>
                     <li><a href="#">Netflix Shop</a></li>
                     <li><a href="#">Ways to Watch</a></li>
-                    <li><a href="#">Cookie Preferences</a></li>
-                    <li><a href="#">Speed Test</a></li>
-                    <li><a href="#">Do Not Sell or Share My Personal Information</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -602,9 +468,6 @@
                     <li><a href="#">Investor Relations</a></li>
                     <li><a href="#">Redeem Gift Cards</a></li>
                     <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Corporate Information</a></li>
-                    <li><a href="#">Legal Notices</a></li>
-                    <li><a href="#">Ad Choices</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -613,20 +476,7 @@
                     <li><a href="#">Jobs</a></li>
                     <li><a href="#">Buy Gift Cards</a></li>
                     <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Only on Netflix</a></li>
                 </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="language-selector">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#757575">
-                    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm5.7 4.8h-2.4c-.3-1.2-.7-2.3-1.2-3.2 1.5.7 2.7 1.8 3.6 3.2zM8 2c.7 1 1.2 2.2 1.5 3.5H6.5C6.8 4.2 7.3 3 8 2zM2 8c0-.5.1-1 .2-1.5h2.8c-.1.5-.1 1-.1 1.5s0 1 .1 1.5H2.2c-.1-.5-.2-1-.2-1.5zm.3 3.2h2.4c.3 1.2.7 2.3 1.2 3.2-1.5-.7-2.7-1.8-3.6-3.2zm2.4-6.4H2.3c.9-1.4 2.1-2.5 3.6-3.2-.5.9-.9 2-1.2 3.2zM8 14c-.7-1-1.2-2.2-1.5-3.5h3c-.3 1.3-.8 2.5-1.5 3.5zm1.8-5c.1-.5.1-1 .1-1.5s0-1-.1-1.5h3.1c.1.5.2 1 .2 1.5s-.1 1-.2 1.5h-3.1zm.4 5.2c.5-.9.9-2 1.2-3.2h2.4c-.9 1.4-2.1 2.5-3.6 3.2z"/>
-                </svg>
-                English
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#757575">
-                    <path d="M8 11L3 6h10l-5 5z"/>
-                </svg>
             </div>
         </div>
     </footer>
@@ -650,25 +500,6 @@
                         item.previousElementSibling.classList.remove('active');
                     }
                 });
-            });
-        });
-
-        // Form validation
-        document.querySelectorAll('.get-started-btn').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const input = e.target.closest('.form-group').querySelector('input');
-                if (!input.value || !input.value.includes('@')) {
-                    input.style.borderColor = '#e50914';
-                    e.preventDefault();
-                }
-            });
-        });
-
-        // Language selector
-        document.querySelectorAll('.language-selector').forEach(selector => {
-            selector.addEventListener('click', () => {
-                // In a real implementation, this would show a dropdown
-                alert('Language selection would appear here');
             });
         });
     </script>
